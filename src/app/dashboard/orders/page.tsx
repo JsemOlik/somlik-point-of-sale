@@ -20,7 +20,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ChevronRight, Utensils } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 import {
   collection,

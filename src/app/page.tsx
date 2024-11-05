@@ -23,6 +23,7 @@ import {
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function Home() {
   const { user, loading } = useAuth();
@@ -45,7 +46,9 @@ export default function Home() {
         email,
         password
       );
+
       router.push("/dashboard");
+      console.log(userCredential);
     } catch (error) {
       console.error("Login error:", error);
       // Add error handling here
@@ -133,7 +136,7 @@ export default function Home() {
               onClick={handleGoogleSignIn}
               className="w-full mt-2 bg-white text-black border border-gray-300 hover:bg-gray-100"
             >
-              <img
+              <Image
                 src="https://www.google.com/favicon.ico"
                 alt="Google"
                 className="w-4 h-4 mr-2"

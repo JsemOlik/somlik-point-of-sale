@@ -13,7 +13,6 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-  SheetFooter,
 } from "@/components/ui/sheet";
 import {
   Table,
@@ -99,6 +98,7 @@ export default function Page() {
       }
       setEditingProduct(null);
       setIsAddingProduct(false);
+      console.log(isAddingProduct);
     } catch (error) {
       console.error("Error saving product:", error);
       alert("Error saving product. Please try again.");
