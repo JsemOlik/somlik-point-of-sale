@@ -40,43 +40,6 @@ type Order = {
   tableNumber: number;
 };
 
-// const orders: Order[] = [
-//   {
-//     id: "ORD001",
-//     date: "2023-05-01 18:30",
-//     total: 42.5,
-//     tableNumber: 5,
-//     items: [
-//       { name: "Margherita Pizza", quantity: 1, price: 12.5 },
-//       { name: "Caesar Salad", quantity: 1, price: 8.0 },
-//       { name: "Spaghetti Carbonara", quantity: 1, price: 15.0 },
-//       { name: "Tiramisu", quantity: 1, price: 7.0 },
-//     ],
-//   },
-//   {
-//     id: "ORD002",
-//     date: "2023-05-01 19:15",
-//     total: 35.5,
-//     tableNumber: 3,
-//     items: [
-//       { name: "Grilled Salmon", quantity: 1, price: 18.5 },
-//       { name: "Garlic Bread", quantity: 1, price: 4.0 },
-//       { name: "Chocolate Mousse", quantity: 2, price: 6.5 },
-//     ],
-//   },
-//   {
-//     id: "ORD003",
-//     date: "2023-05-01 20:00",
-//     total: 51.0,
-//     tableNumber: 8,
-//     items: [
-//       { name: "T-Bone Steak", quantity: 1, price: 28.0 },
-//       { name: "Mushroom Risotto", quantity: 1, price: 14.0 },
-//       { name: "House Wine", quantity: 1, price: 9.0 },
-//     ],
-//   },
-// ];
-
 // Add a helper function to format the Firestore timestamp
 const formatFirestoreTimestamp = (timestamp: Timestamp) => {
   const date = timestamp.toDate();
@@ -116,6 +79,7 @@ export default function Page() {
       },
       (error) => {
         console.error("Error listening to orders:", error);
+        console.log(selectedOrder);
       }
     );
 

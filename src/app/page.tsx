@@ -60,6 +60,7 @@ export default function Home() {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
       router.push("/dashboard");
+      console.log(result);
     } catch (error) {
       console.error("Google sign-in error:", error);
       // Add error handling here
