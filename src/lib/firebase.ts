@@ -4,12 +4,12 @@ import { getAuth } from 'firebase/auth';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBWyJEoBfa1T2VVh8bJtGIa5Onxs3ajeng",
-  authDomain: "somlik-point-of-sale-next.firebaseapp.com",
-  projectId: "somlik-point-of-sale-next",
-  storageBucket: "somlik-point-of-sale-next.firebasestorage.app",
-  messagingSenderId: "141962606370",
-  appId: "1:141962606370:web:11f1456bd86a9e631a177b"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
