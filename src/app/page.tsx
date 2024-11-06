@@ -26,15 +26,15 @@ import { useEffect } from "react";
 import Image from "next/image";
 
 export default function Home() {
-  if (typeof window === "undefined") {
-    return null; // Return null during server-side rendering
-  }
-
   const { user, loading } = useAuth();
   const router = useRouter();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [rememberMe, setRememberMe] = React.useState(false);
+
+  if (typeof window === "undefined") {
+    return null; // Return null during server-side rendering
+  }
 
   useEffect(() => {
     if (user && !loading) {
