@@ -87,6 +87,11 @@ export default function Page() {
   };
 
   const updateQuantity = (productId: number, newQuantity: number) => {
+    if (newQuantity <= 0) {
+      removeFromOrder(productId);
+      return;
+    }
+
     setOrder((prevOrder) =>
       prevOrder.map((item) =>
         item.id === productId ? { ...item, quantity: newQuantity } : item
@@ -162,9 +167,7 @@ export default function Page() {
               <Button
                 variant="outline"
                 size="icon"
-                onClick={() =>
-                  updateQuantity(item.id, Math.max(1, item.quantity - 1))
-                }
+                onClick={() => updateQuantity(item.id, item.quantity - 1)}
               >
                 <Minus className="h-4 w-4" />
               </Button>
@@ -172,9 +175,12 @@ export default function Page() {
                 type="number"
                 min="1"
                 value={item.quantity}
-                onChange={(e) =>
-                  updateQuantity(item.id, parseInt(e.target.value) || 1)
-                }
+                onChange={(e) => {
+                  const value = parseInt(e.target.value);
+                  if (!isNaN(value)) {
+                    updateQuantity(item.id, value);
+                  }
+                }}
                 className="mx-2 w-16 text-center"
               />
               <Button
