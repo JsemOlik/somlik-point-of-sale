@@ -138,8 +138,10 @@ export default function Home() {
               className="w-full mt-2 bg-white text-black border border-gray-300 hover:bg-gray-100"
             >
               <Image
-                src="https://www.google.com/favicon.ico"
+                src="/google.ico"
                 alt="Google"
+                width={16}
+                height={16}
                 className="w-4 h-4 mr-2"
               />
               Sign in with Google
