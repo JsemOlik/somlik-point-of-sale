@@ -40,7 +40,7 @@ export function NavUser() {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      router.push("/");
+      router.replace("/");
     } catch (error) {
       console.error("Logout error:", error);
     }
