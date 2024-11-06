@@ -32,15 +32,15 @@ export default function Home() {
   const [password, setPassword] = React.useState("");
   const [rememberMe, setRememberMe] = React.useState(false);
 
-  if (typeof window === "undefined") {
-    return null; // Return null during server-side rendering
-  }
-
   useEffect(() => {
     if (user && !loading) {
       router.push("/dashboard");
     }
   }, [user, loading, router]);
+
+  if (typeof window === "undefined") {
+    return null; // Return null during server-side rendering
+  }
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
